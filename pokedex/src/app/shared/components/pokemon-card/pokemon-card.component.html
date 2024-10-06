@@ -1,5 +1,5 @@
 <div class="pokemon-card"
-    [ngStyle]="{'background-color': typeColors[type!], 'box-shadow':shadowColors[type!]+' 0px 15px 40px 0px'}">
+    [ngStyle]="{'background-color': typeColors[types![0].type.name || 0], 'box-shadow':shadowColors[types![0].type.name || 0]+' 0px 15px 40px 0px'}">
     <div class="pokemon-info">
         <span class="pokemon-info__id">
             #{{ id }}
@@ -7,9 +7,15 @@
         <span class="pokemon-info__name">
             {{ name }}
         </span>
-        <span class="pokemon-info__type">
-            {{ type }}
-        </span>
+        <div class="pokemon-types">
+
+            @for (type of types; track type.type.name) {
+            <span class="pokemon-type">
+                {{ type.type.name }}
+            </span>
+            }
+
+        </div>
     </div>
     <div class="pokemon-picture">
         <img width="220px"

@@ -1,14 +1,16 @@
 header {
     display: flex;
     justify-content: center;
+    margin-top: 32px;
     .app-logo {
         width: 300px;
     }
 }
 .pokemon-list {
     margin-top: 32px;
-    padding: 32px;
-    gap: 64px;
-    flex-wrap: wrap;
+    padding: 64px;
+    gap: 32px; /* Ajuste o gap como preferir */
     display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha */
+    justify-content: space-between; /* Espaçamento entre os cartões */
 }

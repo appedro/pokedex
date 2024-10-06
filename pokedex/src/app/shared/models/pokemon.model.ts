@@ -10,7 +10,7 @@ export interface Pokemon {
     sprites: Sprites;
 }
 
-interface PokemonType {
+export interface PokemonType {
     slot: number;
     type: {
         name: string;

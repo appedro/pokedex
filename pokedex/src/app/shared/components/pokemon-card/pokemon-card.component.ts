@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { PokemonType } from '../../models/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -11,7 +12,7 @@ import { Component, Input } from '@angular/core';
 export class PokemonCardComponent {
   @Input() public name?: string;
   @Input() public id?: string;
-  @Input() public type?: string;
+  @Input() public types?: PokemonType[];
   @Input() public sprite?: string;
 
   public typeColors: { [key: string]: string } = {
@@ -53,7 +54,5 @@ export class PokemonCardComponent {
     steel: 'rgb(170, 170, 170, 0.8)', 
     fairy: 'rgb(255, 182, 255, 0.8)',
   };
-  get backgroundColor(): string {
-    return this.typeColors[this.type || "dark"] || 'rgb(236, 82, 120)';
-  }
+
 }

@@ -3,7 +3,7 @@
 </header>
 <div class="pokemon-list">
     @for (pokemon of pokemons(); track pokemon.id) {
-    <app-pokemon-card [name]="pokemon.name" [id]="pokemon.id.toString()" [type]="pokemon.types[0].type.name"
+    <app-pokemon-card [name]="pokemon.name" [id]="pokemon.id.toString()" [types]="pokemon.types"
         [sprite]="pokemon.sprites.front_default">
     </app-pokemon-card>
     }
