@@ -2,14 +2,25 @@
     <img src="assets/images/pokemon-logo.svg" class="app-logo" />
 </header>
 
-<div class="pokemon-list">
+<div class="search-box">
+    <input 
+        type="search" 
+        placeholder="Type Pokémon name"
+        [formControl]="searchForm" 
+    />
+</div>
+
+<main class="pokemon-list">
     @for (pokemon of pokemons(); track pokemon.id) {
-    <app-pokemon-card [name]="pokemon.name" [id]="pokemon.id.toString()" [types]="pokemon.types"
+    <app-pokemon-card 
+        [name]="pokemon.name" 
+        [id]="pokemon.id.toString()" 
+        [types]="pokemon.types"
         [sprite]="pokemon.sprites.front_default">
     </app-pokemon-card>
     }
 
     <div class="pokedex-actions">
-        <button (click)="loadMorePokemons()">Load more Pokemons!</button>
+        <button (click)="loadMorePokemons()">Load more Pokémons!</button>
     </div>
-</div>
+</main>

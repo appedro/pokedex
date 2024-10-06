@@ -27,4 +27,18 @@ export class PokedexService {
       });
     });
   }
+
+  public searchPokemonByName(name: string): void {
+    const url = `${this.baseUrl}/pokemon/${name.toLowerCase()}`;
+    
+    this.http.get<Pokemon>(url).subscribe(
+      (pokemonDetails) => {
+        this.pokemons.set([pokemonDetails]); // Atualiza o estado com o Pokémon encontrado
+      },
+      (error) => {
+        console.error('Pokémon not found:', error);
+        this.pokemons.set([]); // Limpa os pokémons se não encontrado
+      }
+    );
+  }
 }
