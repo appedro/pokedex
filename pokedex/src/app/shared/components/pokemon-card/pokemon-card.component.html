@@ -1,0 +1,19 @@
+<div class="pokemon-card"
+    [ngStyle]="{'background-color': typeColors[type!], 'box-shadow':shadowColors[type!]+' 0px 15px 40px 0px'}">
+    <div class="pokemon-info">
+        <span class="pokemon-info__id">
+            #{{ id }}
+        </span>
+        <span class="pokemon-info__name">
+            {{ name }}
+        </span>
+        <span class="pokemon-info__type">
+            {{ type }}
+        </span>
+    </div>
+    <div class="pokemon-picture">
+        <img width="220px"
+            [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/'+id+'.svg'"
+            alt="{{ name }} sprite">
+    </div>
+</div>
