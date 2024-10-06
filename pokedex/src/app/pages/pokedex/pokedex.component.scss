@@ -16,6 +16,14 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.not-found {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #FF0000;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
 .search-box{
     display: flex;
     justify-content: center;

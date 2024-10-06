@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { PokemonCardComponent } from '../../shared';
 import { PokedexService } from './pokedex.service';
@@ -17,8 +17,13 @@ import { debounceTime } from 'rxjs';
 export class PokedexComponent implements OnInit {
   public pokemons = this.pokedexService.pokemons;
   public searchForm: FormControl = new FormControl();
-
+  public notFound: boolean = false;
+  
   constructor(private pokedexService: PokedexService) {
+    effect(()=> {
+      const isEmpty = this.pokemons().length === 0;
+      this.notFound = isEmpty;
+    })
   }
 
   ngOnInit(): void {
@@ -28,6 +33,7 @@ export class PokedexComponent implements OnInit {
       if (value) {
         this.pokedexService.searchPokemonByName(value);
       } else {
+        this.notFound = false;
         this.pokedexService.fetchPokemons(10);
       }
     });
