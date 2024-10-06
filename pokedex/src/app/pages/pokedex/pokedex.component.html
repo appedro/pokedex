@@ -1,3 +1,10 @@
 <header>
-    <img src="assets/images/pokemon-logo.svg" class="app-logo" />    
+    <img src="assets/images/pokemon-logo.svg" class="app-logo" />
 </header>
+<div class="pokemon-list">
+    @for (pokemon of pokemons(); track pokemon.id) {
+    <app-pokemon-card [name]="pokemon.name" [id]="pokemon.id.toString()" [type]="pokemon.types[0].type.name"
+        [sprite]="pokemon.sprites.front_default">
+    </app-pokemon-card>
+    }
+</div>
