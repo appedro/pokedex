@@ -33,6 +33,7 @@ export class PokemonCardComponent {
     dark: 'rgb(60, 60, 60)', 
     steel: 'rgb(170, 170, 170)', 
     fairy: 'rgb(255, 182, 255)',
+    normal: 'rgba(155, 155, 155)',
   };
 
   public shadowColors: { [key: string]: string } = {
@@ -53,6 +54,7 @@ export class PokemonCardComponent {
     dark: 'rgb(60, 60, 60, 0.8)', 
     steel: 'rgb(170, 170, 170, 0.8)', 
     fairy: 'rgb(255, 182, 255, 0.8)',
+    normal: 'rgba(155, 155, 155, 0.8)',
   };
 
 }

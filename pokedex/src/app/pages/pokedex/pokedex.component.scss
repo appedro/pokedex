@@ -2,15 +2,38 @@ header {
     display: flex;
     justify-content: center;
     margin-top: 32px;
+
     .app-logo {
         width: 300px;
     }
 }
+
 .pokemon-list {
     margin-top: 32px;
     padding: 64px;
-    gap: 32px; /* Ajuste o gap como preferir */
+    gap: 32px;
     display: flex;
-    flex-wrap: wrap; /* Permite quebra de linha */
-    justify-content: space-between; /* Espaçamento entre os cartões */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pokedex-actions {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    button {
+        background-color: #3B4CCA;
+        color: white;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        opacity: .9;
+
+        &:hover {
+            opacity: 1;
+            transition: opacity .3s ease-in-out;
+        }
+    }
 }

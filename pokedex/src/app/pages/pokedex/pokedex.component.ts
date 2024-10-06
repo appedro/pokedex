@@ -10,19 +10,19 @@ import { effect } from '@angular/core';
   imports: [PokemonCardComponent, HttpClientModule],
   templateUrl: './pokedex.component.html',
   styleUrls: ['./pokedex.component.scss'],
-  providers: [PokedexService]
+  providers: [PokedexService],
 })
 export class PokedexComponent implements OnInit {
-  public pokedex: any[] = [{ name: "teste", id: "ss" }];
   public pokemons = this.pokedexService.pokemons;
 
   constructor(private pokedexService: PokedexService) {
-    effect(() => {
-      console.log('Lista de Pokémon carregada:', this.pokemons());
-    });
+  } 
+  
+  public loadMorePokemons(): void {
+    this.pokedexService.fetchPokemons(10); 
   }
 
   ngOnInit(): void {
-    this.pokedexService.fetchPokemons(10);
+    this.pokedexService.fetchPokemons(10); 
   }
 }
