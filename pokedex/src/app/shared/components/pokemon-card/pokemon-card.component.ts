@@ -9,19 +9,31 @@ import { PokemonDetailsComponent } from '../pokemon-details/pokemon-details.comp
   standalone: true,
   imports: [CommonModule],
   templateUrl: './pokemon-card.component.html',
-  styleUrl: './pokemon-card.component.scss',
+  styleUrls: ['./pokemon-card.component.scss'],
 })
 export class PokemonCardComponent {
   @Input() public name?: string;
   @Input() public id?: string;
   @Input() public types?: PokemonType[];
   @Input() public sprite?: string;
-  @Input() public pokemon?: Pokemon;
-  public pokemonType?: string = this.pokemon?.types[0].type.name;
-  
+
+  private _pokemon?: Pokemon;
+  public pokemonType?: string;
+
+  @Input() 
+  set pokemon(value: Pokemon | undefined) {
+    this._pokemon = value;
+    this.pokemonType = this._pokemon?.types[0]?.type.name || undefined;
+  }
+
+  get pokemon(): Pokemon | undefined {
+    return this._pokemon;
+  }
+
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
+    console.log(this.pokemon)
     this.dialog.open(PokemonDetailsComponent, {
       data: this.pokemon,
       panelClass: 'custom-dialog',
