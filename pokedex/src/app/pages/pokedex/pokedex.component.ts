@@ -38,6 +38,10 @@ export class PokedexComponent implements OnInit {
     });
   }
 
+  public openDetails() : void {
+    
+  }
+
   public loadMorePokemons(): void {
     this.pokedexService.fetchPokemons(10);
   }

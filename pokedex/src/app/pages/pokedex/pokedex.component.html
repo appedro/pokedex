@@ -14,7 +14,7 @@
 
     @for (pokemon of pokemons(); track pokemon.id) {
     <app-pokemon-card [name]="pokemon.name" [id]="pokemon.id.toString()" [types]="pokemon.types"
-        [sprite]="pokemon.sprites.front_default">
+        [sprite]="pokemon.sprites.front_default" (click)="openDetails()" [pokemon]="pokemon">
     </app-pokemon-card>
     }
     <div class="pokedex-actions">

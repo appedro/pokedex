@@ -1,32 +1,23 @@
+import { Component, Inject, OnInit, computed } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PokedexService } from '../../services/pokedex.service';
+import { Pokemon } from '../../models';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { Pokemon, PokemonType } from '../../models/pokemon.model';
-import { MatDialog } from '@angular/material/dialog';
-import { PokemonDetailsComponent } from '../pokemon-details/pokemon-details.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-pokemon-card',
+  selector: 'app-pokemon-details',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './pokemon-card.component.html',
-  styleUrl: './pokemon-card.component.scss'
+  imports: [CommonModule, HttpClientModule],
+  templateUrl: './pokemon-details.component.html',
+  styleUrls: ['./pokemon-details.component.scss'],
+  providers: [PokedexService, HttpClient],
 })
-export class PokemonCardComponent {
-  @Input() public name?: string;
-  @Input() public id?: string;
-  @Input() public types?: PokemonType[];
-  @Input() public sprite?: string;
-  @Input() public pokemon?: Pokemon;
+export class PokemonDetailsComponent implements OnInit {
+  public pokemon?: Pokemon;
 
-  constructor(public dialog: MatDialog) { }
-
-  openDialog(): void {
-    this.dialog.open(PokemonDetailsComponent, {
-      data: this.pokemon,
-      width:"600px",
-      panelClass: "custom-dialog"
-    });
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Pokemon) { this.pokemon = data;}
 
   public typeColors: { [key: string]: string } = {
     fire: 'rgb(239, 129, 30)',
@@ -70,4 +61,7 @@ export class PokemonCardComponent {
     normal: 'rgba(155, 155, 155, 0.8)',
   };
 
+  ngOnInit(): void {
+
+  }
 }
