@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
-import { Pokemon, PokemonListResponse } from '../../shared/models/pokemon.model';
+import { Pokemon, PokemonListResponse } from '../models/pokemon.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class PokedexService {
   public pokemons = signal<Pokemon[]>([]); 
   private baseUrl = 'https://pokeapi.co/api/v2';
   private offset = 0;
-
+  public selectedPokemon = signal<Pokemon | null>(null); 
   constructor(private http: HttpClient) { }
 
   public fetchPokemons(limit: number = 10): void {
@@ -33,12 +33,16 @@ export class PokedexService {
     
     this.http.get<Pokemon>(url).subscribe(
       (pokemonDetails) => {
-        this.pokemons.set([pokemonDetails]); // Atualiza o estado com o Pokémon encontrado
+        this.pokemons.set([pokemonDetails]); 
+        this.selectedPokemon.set(pokemonDetails); 
       },
       (error) => {
         console.error('Pokémon not found:', error);
-        this.pokemons.set([]); // Limpa os pokémons se não encontrado
+        this.pokemons.set([]);
+        this.selectedPokemon.set(null); 
       }
     );
   }
+
+  
 }
