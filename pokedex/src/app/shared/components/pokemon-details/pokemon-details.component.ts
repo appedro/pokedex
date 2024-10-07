@@ -16,11 +16,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class PokemonDetailsComponent implements OnInit {
   public pokemon?: Pokemon;
-  public pokemonType: string;
-  
+  public pokemonType?: string;
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: Pokemon) {
     this.pokemon = data;
-    this.pokemonType = data.types[0].type.name;
+    if( data?.types) this.pokemonType = data?.types[0]?.type.name;
   }
 
   ngOnInit(): void {}
