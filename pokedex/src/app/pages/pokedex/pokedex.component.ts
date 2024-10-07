@@ -19,16 +19,16 @@ export class PokedexComponent implements OnInit {
   public notFound: boolean = false;
 
   constructor(private pokedexService: PokedexService) {
-    effect(()=> {
+    effect(() => {
       const isEmpty = this.pokemons().length === 0;
       this.notFound = isEmpty;
-    })
+    });
   }
 
   ngOnInit(): void {
     this.pokedexService.fetchPokemons(10);
 
-    this.searchForm.valueChanges.pipe(debounceTime(300)).subscribe(value => {
+    this.searchForm.valueChanges.pipe(debounceTime(300)).subscribe((value) => {
       if (value) {
         this.pokedexService.searchPokemonByName(value);
       } else {
@@ -38,9 +38,7 @@ export class PokedexComponent implements OnInit {
     });
   }
 
-  public openDetails() : void {
-    
-  }
+  public openDetails(): void {}
 
   public loadMorePokemons(): void {
     this.pokedexService.fetchPokemons(10);

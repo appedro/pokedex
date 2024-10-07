@@ -1,65 +1,59 @@
-
 h2 {
-    text-transform: capitalize;
-    font-weight: 500;
-    font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 2rem;
 }
 ::ng-deep {
-
-    .mat-mdc-dialog-surface {
-        background-color: transparent!important;
-        box-shadow: none;
-    }
+  .mat-mdc-dialog-surface {
+    background-color: transparent !important;
+    border-radius: 16px !important;
+  }
 }
 .pokemon-card {
-    padding: 32px;
-    border-radius: 12px 16px 32px 64px;
+  padding: 32px;
 }
-
 .pokemon-type {
-    font-size: 0.875rem;
-    background-color: rgb(0, 0, 0, 0.3);
-    padding: 4px 8px;
-    text-transform: capitalize;
-    border-radius: 8px;
-    color: white;
-    margin-right: 10px;
+  font-size: 0.875rem;
+  background-color: rgb(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  text-transform: capitalize;
+  border-radius: 8px;
+  color: white;
+  margin-right: 10px;
 }
-
 .pokemon-main {
-    display: flex;
-    gap: 16px;
+  display: flex;
+  gap: 16px;
 
-    .pokemon-main-info {
-        display: flex;
-        flex-direction: column;
-
-        &__id {
-            font-weight: 600;
-            color: #000000b3;
-        }
-
-        &__name {
-            font-weight: 600;
-            color: white;
-            font-size: 3rem;
-            text-transform: capitalize;
-        }
-    }
-}
-
-.pokemon-details {
-    margin-top: 20px;
+  .pokemon-main-info {
     display: flex;
     flex-direction: column;
-    margin-left: 32px;
-    background-color: rgba(255, 255, 255, 0.466);
-    padding: 32px;
-    border-radius: 12px;
-    p {
-        display: flex;
-        gap: 32px;
-        margin: 5px 0;
-        font-size: 1.2em;
+
+    &__id {
+      font-weight: 600;
+      color: #000000b3;
     }
+
+    &__name {
+      font-weight: 600;
+      color: white;
+      font-size: 3rem;
+      text-transform: capitalize;
+    }
+  }
+}
+.pokemon-details {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+  background-color: rgba(255, 255, 255, 0.466);
+  padding: 32px;
+  border-radius: 12px;
+  p {
+    display: flex;
+    gap: 32px;
+    margin: 5px 0;
+    font-size: 1.2em;
+  }
 }

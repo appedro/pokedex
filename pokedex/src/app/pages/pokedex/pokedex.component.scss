@@ -1,60 +1,57 @@
 header {
-    display: flex;
-    justify-content: center;
-    margin-top: 32px;
-
-    .app-logo {
-        width: 300px;
-    }
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  .app-logo {
+    width: 300px;
+  }
 }
-
 .pokemon-list {
-    margin-top: 32px;
-    padding: 64px;
-    gap: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  margin-top: 32px;
+  padding: 64px;
+  gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .not-found {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    color: #FF0000;
-    font-size: 1.5rem;
-    font-weight: 500;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #ff0000;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
-.search-box{
-    display: flex;
-    justify-content: center;
-    input {
-        border-radius: 8px;
-        border: 1px solid #cfcfcf;
-        padding: 8px;
-        margin-top: 16px;
-        width: 300px;
-        &:focus, &:active {
-            outline: none;
-        }
+.search-box {
+  display: flex;
+  justify-content: center;
+  input {
+    border-radius: 8px;
+    border: 1px solid #cfcfcf;
+    padding: 8px;
+    margin-top: 16px;
+    width: 300px;
+    &:focus,
+    &:active {
+      outline: none;
     }
+  }
 }
 .pokedex-actions {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-
-    button {
-        background-color: #3B4CCA;
-        color: white;
-        padding: 16px 32px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        opacity: .9;
-
-        &:hover {
-            opacity: 1;
-            transition: opacity .3s ease-in-out;
-        }
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  button {
+    background-color: #3b4cca;
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.9;
+    &:hover {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
     }
+  }
 }

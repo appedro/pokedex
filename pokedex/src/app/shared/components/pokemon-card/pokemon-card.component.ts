@@ -9,7 +9,7 @@ import { PokemonDetailsComponent } from '../pokemon-details/pokemon-details.comp
   standalone: true,
   imports: [CommonModule],
   templateUrl: './pokemon-card.component.html',
-  styleUrl: './pokemon-card.component.scss'
+  styleUrl: './pokemon-card.component.scss',
 })
 export class PokemonCardComponent {
   @Input() public name?: string;
@@ -18,13 +18,12 @@ export class PokemonCardComponent {
   @Input() public sprite?: string;
   @Input() public pokemon?: Pokemon;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
     this.dialog.open(PokemonDetailsComponent, {
-      data: this.pokemon,      
-      panelClass: "custom-dialog"
+      data: this.pokemon,
+      panelClass: 'custom-dialog',
     });
   }
-  
 }

@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,15 +19,17 @@ $pokedex-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$pokedex-theme: mat.define-light-theme((
-  color: (
-    primary: $pokedex-primary,
-    accent: $pokedex-accent,
-    warn: $pokedex-warn,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0
-));
+$pokedex-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $pokedex-primary,
+      accent: $pokedex-accent,
+      warn: $pokedex-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
 ::ng-deep .mat-dialog-container {
   background-color: red !important; /* Define o fundo vermelho */
   color: white; /* Ajusta o texto para melhor visibilidade */
@@ -38,19 +39,25 @@ $pokedex-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($pokedex-theme);
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 html,
 body,
 * {
-    font-family: Roboto;
+  font-family: Roboto;
 }
 
 body {
-    background-color: rgb(225, 230, 235);
+  background-color: rgb(225, 230, 235);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .type-fire {
   background-color: rgb(239, 129, 30);

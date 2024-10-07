@@ -1,23 +1,32 @@
 <header>
-    <img src="assets/images/pokemon-logo.svg" class="app-logo" />
+  <img src="assets/images/pokemon-logo.svg" class="app-logo" />
 </header>
 
 <div class="search-box">
-    <input type="search" placeholder="Type Pokémon name" [formControl]="searchForm" />
+  <input
+    type="search"
+    placeholder="Type Pokémon name"
+    [formControl]="searchForm"
+  />
 </div>
 
 <main class="pokemon-list">
-
-    @if(notFound){
+  @if (notFound) {
     <p class="not-found">Pokémon not found!</p>
-    }
+  }
 
-    @for (pokemon of pokemons(); track pokemon.id) {
-    <app-pokemon-card [name]="pokemon.name" [id]="pokemon.id.toString()" [types]="pokemon.types"
-        [sprite]="pokemon.sprites.front_default" (click)="openDetails()" [pokemon]="pokemon">
+  @for (pokemon of pokemons(); track pokemon.id) {
+    <app-pokemon-card
+      [name]="pokemon.name"
+      [id]="pokemon.id.toString()"
+      [types]="pokemon.types"
+      [sprite]="pokemon.sprites.front_default"
+      (click)="openDetails()"
+      [pokemon]="pokemon"
+    >
     </app-pokemon-card>
-    }
-    <div class="pokedex-actions">
-        <button (click)="loadMorePokemons()">Load more Pokémons!</button>
-    </div>
+  }
+  <div class="pokedex-actions">
+    <button (click)="loadMorePokemons()">Load more Pokémons!</button>
+  </div>
 </main>

@@ -1,25 +1,33 @@
-<div class="pokemon-card" (click)="openDialog()"
-    [ngClass]="['type-' + pokemon!.types[0].type.name, 'shadow-' + pokemon!.types[0].type.name]">
-    <div class="pokemon-info">
-        <span class="pokemon-info__id">
-            #{{ id }}
+<div
+  class="pokemon-card"
+  (click)="openDialog()"
+  [ngClass]="[
+    'type-' + pokemon!.types[0].type.name,
+    'shadow-' + pokemon!.types[0].type.name,
+  ]"
+>
+  <div class="pokemon-info">
+    <span class="pokemon-info__id"> #{{ id }} </span>
+    <span class="pokemon-info__name">
+      {{ name }}
+    </span>
+    <div class="pokemon-types">
+      @for (type of types; track type.type.name) {
+        <span class="pokemon-type">
+          {{ type.type.name }}
         </span>
-        <span class="pokemon-info__name">
-            {{ name }}
-        </span>
-        <div class="pokemon-types">
-
-            @for (type of types; track type.type.name) {
-            <span class="pokemon-type">
-                {{ type.type.name }}
-            </span>
-            }
-
-        </div>
+      }
     </div>
-    <div class="pokemon-picture">
-        <img width="220px"
-            [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/'+id+'.svg'"
-            alt="{{ name }} sprite">
-    </div>
+  </div>
+  <div class="pokemon-picture">
+    <img
+      width="220px"
+      [src]="
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' +
+        id +
+        '.svg'
+      "
+      alt="{{ name }} sprite"
+    />
+  </div>
 </div>
