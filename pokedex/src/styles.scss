@@ -51,3 +51,147 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.type-fire {
+  background-color: rgb(239, 129, 30);
+}
+
+.type-water {
+  background-color: rgb(0, 144, 255);
+}
+
+.type-grass {
+  background-color: rgb(100, 200, 100);
+}
+
+.type-electric {
+  background-color: rgb(255, 255, 55);
+}
+
+.type-ice {
+  background-color: rgb(150, 255, 255);
+}
+
+.type-fighting {
+  background-color: rgb(192, 48, 40);
+}
+
+.type-poison {
+  background-color: rgb(160, 60, 160);
+}
+
+.type-ground {
+  background-color: rgb(210, 180, 100);
+}
+
+.type-flying {
+  background-color: rgb(160, 160, 255);
+}
+
+.type-psychic {
+  background-color: rgb(255, 100, 100);
+}
+
+.type-bug {
+  background-color: rgb(170, 185, 20);
+}
+
+.type-rock {
+  background-color: rgb(200, 190, 100);
+}
+
+.type-ghost {
+  background-color: rgb(100, 100, 255);
+}
+
+.type-dragon {
+  background-color: rgb(100, 100, 255);
+}
+
+.type-dark {
+  background-color: rgb(60, 60, 60);
+}
+
+.type-steel {
+  background-color: rgb(170, 170, 170);
+}
+
+.type-fairy {
+  background-color: rgb(255, 182, 255);
+}
+
+.type-normal {
+  background-color: rgb(155, 155, 155);
+}
+
+.shadow-fire {
+  box-shadow: 0 0 10px rgba(239, 129, 30, 0.8);
+}
+
+.shadow-water {
+  box-shadow: 0 0 10px rgba(0, 144, 255, 0.8);
+}
+
+.shadow-grass {
+  box-shadow: 0 0 10px rgba(100, 200, 100, 0.8);
+}
+
+.shadow-electric {
+  box-shadow: 0 0 10px rgba(255, 255, 55, 0.8);
+}
+
+.shadow-ice {
+  box-shadow: 0 0 10px rgba(150, 255, 255, 0.8);
+}
+
+.shadow-fighting {
+  box-shadow: 0 0 10px rgba(192, 48, 40, 0.8);
+}
+
+.shadow-poison {
+  box-shadow: 0 0 10px rgba(160, 60, 160, 0.8);
+}
+
+.shadow-ground {
+  box-shadow: 0 0 10px rgba(210, 180, 100, 0.8);
+}
+
+.shadow-flying {
+  box-shadow: 0 0 10px rgba(160, 160, 255, 0.8);
+}
+
+.shadow-psychic {
+  box-shadow: 0 0 10px rgba(255, 100, 100, 0.8);
+}
+
+.shadow-bug {
+  box-shadow: 0 0 10px rgba(170, 185, 20, 0.8);
+}
+
+.shadow-rock {
+  box-shadow: 0 0 10px rgba(200, 190, 100, 0.8);
+}
+
+.shadow-ghost {
+  box-shadow: 0 0 10px rgba(100, 100, 255, 0.8);
+}
+
+.shadow-dragon {
+  box-shadow: 0 0 10px rgba(100, 100, 255, 0.8);
+}
+
+.shadow-dark {
+  box-shadow: 0 0 10px rgba(60, 60, 60, 0.8);
+}
+
+.shadow-steel {
+  box-shadow: 0 0 10px rgba(170, 170, 170, 0.8);
+}
+
+.shadow-fairy {
+  box-shadow: 0 0 10px rgba(255, 182, 255, 0.8);
+}
+
+.shadow-normal {
+  box-shadow: 0 0 10px rgba(155, 155, 155, 0.8);
+}

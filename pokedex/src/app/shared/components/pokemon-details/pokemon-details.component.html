@@ -1,5 +1,4 @@
-<div class="pokemon-card"
-    [ngStyle]="{'background-color': typeColors[pokemon!.types[0].type.name!], 'box-shadow':shadowColors[pokemon!.types![0].type.name || 0]+' 0px 15px 40px 0px'} ">
+<div class="pokemon-card" [ngClass]="['type-' + pokemon!.types[0].type.name, 'shadow-' + pokemon!.types[0].type.name]">
     <div class="pokemon-main">
         <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/'+pokemon?.id+'.svg'"
             alt="{{ pokemon?.name }}">

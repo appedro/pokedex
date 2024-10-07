@@ -1,9 +1,8 @@
-<div class="pokemon-card"
-    (click)="openDialog()"
-    [ngStyle]="{'background-color': typeColors[types![0].type.name || 0], 'box-shadow':shadowColors[types![0].type.name || 0]+' 0px 15px 40px 0px'}">
+<div class="pokemon-card" (click)="openDialog()"
+    [ngClass]="['type-' + pokemon!.types[0].type.name, 'shadow-' + pokemon!.types[0].type.name]">
     <div class="pokemon-info">
         <span class="pokemon-info__id">
-            #{{ id }}sasa
+            #{{ id }}
         </span>
         <span class="pokemon-info__name">
             {{ name }}
