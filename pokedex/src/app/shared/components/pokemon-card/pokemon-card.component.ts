@@ -22,8 +22,7 @@ export class PokemonCardComponent {
 
   openDialog(): void {
     this.dialog.open(PokemonDetailsComponent, {
-      data: this.pokemon,
-      width:"600px",
+      data: this.pokemon,      
       panelClass: "custom-dialog"
     });
   }
