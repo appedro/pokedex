@@ -17,7 +17,8 @@ export class PokemonCardComponent {
   @Input() public types?: PokemonType[];
   @Input() public sprite?: string;
   @Input() public pokemon?: Pokemon;
-
+  public pokemonType?: string = this.pokemon?.types[0].type.name;
+  
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
