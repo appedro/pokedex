@@ -26,14 +26,14 @@ export class PokedexComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pokedexService.fetchPokemons(10);
+    this.pokedexService.fetchPokemons();
 
     this.searchForm.valueChanges.pipe(debounceTime(300)).subscribe((value) => {
       if (value) {
         this.pokedexService.searchPokemonByName(value);
       } else {
         this.notFound = false;
-        this.pokedexService.fetchPokemons(10);
+        this.pokedexService.fetchPokemons();
       }
     });
   }
@@ -41,6 +41,6 @@ export class PokedexComponent implements OnInit {
   public openDetails(): void {}
 
   public loadMorePokemons(): void {
-    this.pokedexService.fetchPokemons(10);
+    this.pokedexService.fetchPokemons();
   }
 }
